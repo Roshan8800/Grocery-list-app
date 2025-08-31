@@ -41,6 +41,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  bool _isHovering = false;
 
   void _incrementCounter() {
     setState(() {
@@ -113,13 +114,18 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-        elevation: 8.0,
-        highlightElevation: 16.0,
-        shape: const CircleBorder(),
+      floatingActionButton: MouseRegion(
+        onEnter: (event) => setState(() => _isHovering = true),
+        onExit: (event) => setState(() => _isHovering = false),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          transform: Matrix4.identity()..scale(_isHovering ? 1.1 : 1.0),
+          child: FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+        ),
       ),
     );
   }
