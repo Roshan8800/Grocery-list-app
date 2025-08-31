@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:listonic/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,26 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Listonic',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.blue[900],
-        scaffoldBackgroundColor: const Color(0xFF0A0A0A),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue[900]!,
-          brightness: Brightness.dark,
-          secondary: Colors.cyanAccent,
-        ),
-        useMaterial3: true,
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.cyanAccent,
-          foregroundColor: Colors.black,
-          elevation: 4.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
-            side: const BorderSide(color: Colors.cyanAccent, width: 1.0),
-          ),
-        ),
-      ),
+      theme: darkTheme,
       home: const MyHomePage(title: 'Listonic'),
     );
   }
