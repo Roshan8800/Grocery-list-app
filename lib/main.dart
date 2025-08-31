@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:listonic/theme.dart';
+import 'package:listonic/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -63,11 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(1.0),
-          child: Container(
-            color: Colors.cyanAccent.withOpacity(0.5),
-            height: 1.0,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: kElectricBlue,
+                width: 1.0,
+              ),
+            ),
           ),
         ),
       ),
@@ -94,7 +98,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   shadows: [
                     for (double i = 1; i < 4; i++)
                       Shadow(
-                        color: Colors.cyanAccent,
+                        color: kNeonPink.withOpacity(0.7),
+                        blurRadius: 3.0 * i,
+                      ),
+                    for (double i = 1; i < 4; i++)
+                      Shadow(
+                        color: kVibrantPurple.withOpacity(0.7),
                         blurRadius: 3.0 * i,
                       )
                   ],

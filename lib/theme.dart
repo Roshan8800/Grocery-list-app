@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:listonic/colors.dart';
 
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
-  primaryColor: Colors.blue[900],
-  scaffoldBackgroundColor: const Color(0xFF0A0A0A),
+  primaryColor: kElectricBlue,
+  scaffoldBackgroundColor: kBackgroundColor,
   colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.blue[900]!,
+    seedColor: kElectricBlue,
     brightness: Brightness.dark,
-    secondary: Colors.cyanAccent,
+    secondary: kElectricBlue,
   ),
   useMaterial3: true,
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: Colors.cyanAccent,
-    foregroundColor: Colors.black,
+    backgroundColor: kElectricBlue,
+    foregroundColor: Colors.white,
     elevation: 4.0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(16.0),
-      side: const BorderSide(color: Colors.cyanAccent, width: 1.0),
+      side: const BorderSide(color: kElectricBlue, width: 1.0),
     ),
   ),
 );
