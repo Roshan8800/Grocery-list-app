@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:listonic/colors.dart';
 import 'package:listonic/button_theme.dart';
+import 'package:listonic/typography.dart';
 
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
@@ -14,4 +15,5 @@ final darkTheme = ThemeData(
   useMaterial3: true,
   elevatedButtonTheme: elevatedButtonTheme,
   floatingActionButtonTheme: floatingActionButtonTheme,
+  textTheme: textTheme,
 );

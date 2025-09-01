@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:listonic/theme.dart';
 import 'package:listonic/colors.dart';
 
@@ -57,13 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0,
         title: Text(
           widget.title,
-          style: GoogleFonts.orbitron(
-            textStyle: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-              letterSpacing: 1.5,
-            ),
-          ),
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -82,34 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
-              style: GoogleFonts.orbitron(
-                textStyle: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                ),
-              ),
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(
               '$_counter',
-              style: GoogleFonts.orbitron(
-                textStyle: TextStyle(
-                  fontSize: 80,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  shadows: [
-                    for (double i = 1; i < 4; i++)
-                      Shadow(
-                        color: kNeonPink.withOpacity(0.7),
-                        blurRadius: 3.0 * i,
-                      ),
-                    for (double i = 1; i < 4; i++)
-                      Shadow(
-                        color: kVibrantPurple.withOpacity(0.7),
-                        blurRadius: 3.0 * i,
-                      )
-                  ],
-                ),
-              ),
+              style: Theme.of(context).textTheme.displayLarge,
             ),
           ],
         ),
