@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:listonic/colors.dart';
 
 final textTheme = TextTheme(
-  displayLarge: GoogleFonts.orbitron(
+  displayLarge: GoogleFonts.exo2(
     fontSize: 80,
     fontWeight: FontWeight.bold,
     color: Colors.white,
@@ -21,13 +21,13 @@ final textTheme = TextTheme(
         )
     ],
   ),
-  headlineMedium: GoogleFonts.orbitron(
+  headlineMedium: GoogleFonts.exo2(
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: Colors.white,
     letterSpacing: 1.5,
   ),
-  bodyLarge: GoogleFonts.orbitron(
+  bodyLarge: GoogleFonts.nunito(
     fontSize: 16,
     color: Colors.white70,
     letterSpacing: 1.2,
