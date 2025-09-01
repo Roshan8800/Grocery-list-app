@@ -70,18 +70,64 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-              style: Theme.of(context).textTheme.bodyLarge,
+        child: Card(
+          elevation: 8.0,
+          shadowColor: kElectricBlue.withOpacity(0.5),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+            side: BorderSide(
+              color: kElectricBlue.withOpacity(0.5),
+              width: 1.0,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.displayLarge,
+          ),
+          margin: const EdgeInsets.all(16.0),
+          color: Colors.black.withOpacity(0.3),
+          child: Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: kElectricBlue,
+                      width: 2.0,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: kElectricBlue.withOpacity(0.5),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ),
+                    ],
+                  ),
+                  child: const CircleAvatar(
+                    radius: 48,
+                    backgroundColor: Colors.transparent,
+                    child: Icon(
+                      Icons.person,
+                      size: 50,
+                      color: kElectricBlue,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 32),
+                Text(
+                  'You have pushed the button this many times:',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
       floatingActionButton: MouseRegion(
