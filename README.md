@@ -13,22 +13,77 @@ The app uses a dark-mode-first approach with a focus on vibrant, glowing element
 
 ## Getting Started
 
-This project is a Flutter application. To get started, you will need to have the Flutter SDK installed.
+This guide will walk you through setting up your development environment to contribute to the Listonic project.
 
 ### 1. Environment Setup
 
-**Flutter SDK**
+This project is built with Flutter. The following instructions are for a Linux-based environment (e.g., Ubuntu).
 
--   Follow the official Flutter documentation to install the Flutter SDK: [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
+#### 1.1. Install Flutter SDK
 
-**Android SDK**
+1.  **Create a directory for the SDK:**
+    ```bash
+    mkdir -p ~/development/flutter_sdk
+    ```
+2.  **Clone the Flutter repository:**
+    ```bash
+    git clone https://github.com/flutter/flutter.git -b stable ~/development/flutter_sdk
+    ```
+3.  **Add Flutter to your PATH:**
+    ```bash
+    echo 'export PATH="$PATH:$HOME/development/flutter_sdk/bin"' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+4.  **Verify the installation:**
+    ```bash
+    flutter --version
+    ```
 
--   If you are developing for Android, you will need the Android SDK. You can install it as part of Android Studio or as a standalone command-line tool.
--   Follow the official Android documentation: [https://developer.android.com/studio](https://developer.android.com/studio)
+#### 1.2. Install Android SDK
 
-**Google Chrome**
+1.  **Create a directory for the SDK:**
+    ```bash
+    mkdir -p ~/development/android_sdk
+    ```
+2.  **Download the Android SDK command-line tools:**
+    ```bash
+    wget https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip -P ~/development/android_sdk
+    ```
+3.  **Unzip and organize the tools:**
+    ```bash
+    unzip ~/development/android_sdk/commandlinetools-linux-*.zip -d ~/development/android_sdk
+    mkdir -p ~/development/android_sdk/cmdline-tools/latest
+    mv ~/development/android_sdk/cmdline-tools/* ~/development/android_sdk/cmdline-tools/latest/
+    ```
+4.  **Add Android SDK to your PATH:**
+    ```bash
+    echo 'export ANDROID_SDK_ROOT=$HOME/development/android_sdk' >> ~/.bashrc
+    echo 'export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin' >> ~/.bashrc
+    echo 'export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+5.  **Install SDK packages:**
+    ```bash
+    yes | sdkmanager "platform-tools" "build-tools;36.0.0" "platforms;android-34"
+    ```
+6.  **Accept Android licenses:**
+    ```bash
+    yes | flutter doctor --android-licenses
+    ```
 
--   If you are developing for the web, you will need Google Chrome.
+#### 1.3. Install Additional Dependencies
+
+1.  **Google Chrome (for web development):**
+    ```bash
+    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+    sudo apt-get update
+    sudo apt-get install -y google-chrome-stable
+    ```
+2.  **Linux Desktop Dependencies:**
+    ```bash
+    sudo apt-get install -y libgtk-3-dev mesa-utils
+    ```
 
 ### 2. Project Setup
 
@@ -44,7 +99,11 @@ This project is a Flutter application. To get started, you will need to have the
 
 ### 3. Running the App
 
--   To run the app, use the following command:
+-   **Run `flutter doctor`** to ensure everything is set up correctly:
+    ```bash
+    flutter doctor
+    ```
+-   **Run the app:**
     ```bash
     flutter run
     ```
