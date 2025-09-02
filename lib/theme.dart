@@ -6,7 +6,6 @@ import 'package:listonic/typography.dart';
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: kElectricBlue,
-  scaffoldBackgroundColor: kBackgroundColor,
   colorScheme: ColorScheme.fromSeed(
     seedColor: kElectricBlue,
     brightness: Brightness.dark,
