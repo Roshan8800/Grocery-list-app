@@ -8,14 +8,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:listonic/main.dart';
+import 'package:app/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Counter increments smoke test after splash screen', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
+    // The splash screen is showing.
+    expect(find.text('Listonic'), findsOneWidget);
+    expect(find.text('0'), findsNothing);
+
+    // Wait for the splash screen timer to finish.
+    await tester.pump(const Duration(seconds: 3));
+    // Wait for the new page to build.
+    await tester.pump();
+
+    // Verify that our counter starts at 0 on MyHomePage.
     expect(find.text('0'), findsOneWidget);
     expect(find.text('1'), findsNothing);
 

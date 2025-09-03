@@ -1,18 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:listonic/colors.dart';
-import 'package:listonic/button_theme.dart';
-import 'package:listonic/typography.dart';
+import 'package:app/colors.dart';
+import 'package:app/typography.dart';
+import 'package:app/button_theme.dart';
 
-final darkTheme = ThemeData(
-  brightness: Brightness.dark,
-  primaryColor: kElectricBlue,
-  colorScheme: ColorScheme.fromSeed(
-    seedColor: kElectricBlue,
+class AppTheme {
+  AppTheme._();
+
+  static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    secondary: kElectricBlue,
-  ),
-  useMaterial3: true,
-  elevatedButtonTheme: elevatedButtonTheme,
-  floatingActionButtonTheme: floatingActionButtonTheme,
-  textTheme: textTheme,
-);
+    primaryColor: AppColors.primary,
+    scaffoldBackgroundColor: AppColors.background,
+    colorScheme: const ColorScheme.dark(
+      primary: AppColors.primary,
+      secondary: AppColors.accent,
+      background: AppColors.background,
+      surface: AppColors.card,
+      error: Colors.red,
+      onPrimary: Colors.white,
+      onSecondary: Colors.white,
+      onBackground: Colors.white,
+      onSurface: Colors.white,
+      onError: Colors.white,
+    ),
+    textTheme: appTextTheme,
+    elevatedButtonTheme: elevatedButtonTheme,
+    floatingActionButtonTheme: floatingActionButtonTheme,
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.background,
+      elevation: 0,
+      titleTextStyle: appTextTheme.headlineMedium,
+      iconTheme: const IconThemeData(color: AppColors.primary),
+    ),
+  );
+}

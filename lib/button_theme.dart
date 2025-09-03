@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:listonic/colors.dart';
+import 'package:app/colors.dart';
 
 final elevatedButtonTheme = ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
-    backgroundColor: kElectricBlue,
-    foregroundColor: Colors.white,
-    shape: const StadiumBorder(),
-    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-    textStyle: const TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.bold,
+    backgroundColor: AppColors.primary,
+    foregroundColor: AppColors.text,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
     ),
+    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
   ),
 );
 
 final floatingActionButtonTheme = FloatingActionButtonThemeData(
-  backgroundColor: kElectricBlue,
+  backgroundColor: AppColors.primary,
   foregroundColor: Colors.white,
   elevation: 4.0,
-  shape: const CircleBorder(),
-  hoverElevation: 8.0,
-  focusElevation: 8.0,
-  highlightElevation: 16.0,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16.0),
+  ),
 );

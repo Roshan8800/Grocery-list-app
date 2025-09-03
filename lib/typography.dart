@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:listonic/colors.dart';
+import 'package:app/colors.dart';
 
-final textTheme = TextTheme(
-  displayLarge: GoogleFonts.exo2(
-    fontSize: 80,
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
-    letterSpacing: 1.5,
-    shadows: [
-      for (double i = 1; i < 4; i++)
-        Shadow(
-          color: kNeonPink.withOpacity(0.7),
-          blurRadius: 3.0 * i,
-        ),
-      for (double i = 1; i < 4; i++)
-        Shadow(
-          color: kVibrantPurple.withOpacity(0.7),
-          blurRadius: 3.0 * i,
-        )
-    ],
-  ),
-  headlineMedium: GoogleFonts.exo2(
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
-    letterSpacing: 1.5,
-  ),
-  bodyLarge: GoogleFonts.nunito(
-    fontSize: 16,
-    color: Colors.white70,
-    letterSpacing: 1.2,
-    height: 1.5,
-  ),
+final TextStyle exo2Headline = GoogleFonts.exo2(
+  fontWeight: FontWeight.bold,
+  color: AppColors.text,
+);
+
+final TextStyle nunitoBody = GoogleFonts.nunito(
+  color: AppColors.text,
+);
+
+final TextTheme appTextTheme = TextTheme(
+  displayLarge: exo2Headline.copyWith(fontSize: 48),
+  displayMedium: exo2Headline.copyWith(fontSize: 40),
+  displaySmall: exo2Headline.copyWith(fontSize: 32),
+  headlineLarge: exo2Headline.copyWith(fontSize: 28),
+  headlineMedium: exo2Headline.copyWith(fontSize: 24),
+  headlineSmall: exo2Headline.copyWith(fontSize: 20),
+  titleLarge: nunitoBody.copyWith(fontSize: 18, fontWeight: FontWeight.bold),
+  bodyLarge: nunitoBody.copyWith(fontSize: 16),
+  bodyMedium: nunitoBody.copyWith(fontSize: 14),
+  labelLarge: nunitoBody.copyWith(fontSize: 16, fontWeight: FontWeight.bold),
 );

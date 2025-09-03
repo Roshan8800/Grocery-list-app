@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
-// Color Scheme
-const Color kBackgroundColor = Color(0xFF000000); // Deep, dark black
-const Color kNeonPink = Color(0xFFF808D6);
-const Color kVibrantPurple = Color(0xFF9B59B6);
-const Color kElectricBlue = Color(0xFF00BFFF); // Bright, electric blue for CTAs
+class AppColors {
+  AppColors._(); // This class is not meant to be instantiated.
 
-const LinearGradient kAccentGradient = LinearGradient(
-  colors: [kNeonPink, kVibrantPurple],
-  begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
-);
+  static const Color background = Color(0xFF0A0A0A);
+  static const Color card = Color(0x1AFFFFFF); // Translucent white
+  static const Color text = Colors.white;
+  static const Color primary = Color(0xFF00FFFF); // Neon Blue
+  static const Color accent = Color(0xFFF000FF); // Neon Pink/Purple
+
+  static const Gradient accentGradient = LinearGradient(
+    colors: [accent, primary],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+}
